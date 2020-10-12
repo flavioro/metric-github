@@ -8,7 +8,7 @@ import app from '../../../src/app';
 import factory from '../../utils/factory';
 import User from '../../../src/models/User';
 import token from '../../utils/jwtoken';
-import { http } from '../../../src/services/GithubService';
+import { http } from '../../../src/services/MetricsService';
 import Repository from '../../../src/models/Repository';
 
 interface Repository {
@@ -33,7 +33,7 @@ interface Issue {
     | null;
 }
 
-describe('GitHubProjectAnalyticsController', () => {
+describe('ProjectAnalyticsController', () => {
   const apiMock = new MockAdapter(http);
 
   let user_id: string;

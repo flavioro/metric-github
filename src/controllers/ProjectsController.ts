@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 
 import { badImplementation } from '@hapi/boom';
-import { searchRepositoryByName } from '../services/GithubService';
+import { searchRepositoryByName } from '../services/MetricsService';
 
 class GitHubProjectsController {
   async show(request: Request, response: Response): Promise<Response> {

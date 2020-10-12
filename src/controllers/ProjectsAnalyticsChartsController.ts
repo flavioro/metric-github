@@ -4,7 +4,7 @@ import { badImplementation } from '@hapi/boom';
 import {
   getRepositories,
   getRepositoryIssuesStats,
-} from '../services/GithubService';
+} from '../services/MetricsService';
 
 interface CustomRequest {
   query: {
@@ -12,7 +12,7 @@ interface CustomRequest {
   };
 }
 
-class GitHubProjectsAnalyticsChartsController {
+class ProjectsAnalyticsChartsController {
   async show(
     request: Request & CustomRequest,
     response: Response,
@@ -34,4 +34,4 @@ class GitHubProjectsAnalyticsChartsController {
   }
 }
 
-export default GitHubProjectsAnalyticsChartsController;
+export default ProjectsAnalyticsChartsController;

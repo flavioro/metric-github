@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
-import GitHubProjectsController from '../controllers/GitHubProjectsController';
-import GitHubProjectAnalyticsController from '../controllers/GitHubProjectAnalyticsController';
+import ProjectsController from '../controllers/ProjectsController';
+import ProjectAnalyticsController from '../controllers/ProjectAnalyticsController';
 import UsersController from '../controllers/UsersController';
 import SessionsController from '../controllers/SessionsController';
 
@@ -12,8 +12,8 @@ import Authenticate from '../middlewares/Authenticate';
 
 const routes = Router();
 
-const gitHubProjectsController = new GitHubProjectsController();
-const gitHubProjectAnalyticsController = new GitHubProjectAnalyticsController();
+const projectsController = new ProjectsController();
+const projectAnalyticsController = new ProjectAnalyticsController();
 const usersController = new UsersController();
 const sessionsController = new SessionsController();
 
@@ -25,13 +25,13 @@ routes.use(Authenticate);
 routes.get(
   '/repositories/:projectName',
   projectNameValidator,
-  gitHubProjectsController.show,
+  projectsController.show,
 );
 
 routes.get(
   '/metrics/:user/:repository',
   githubRepositoryNameValidator,
-  gitHubProjectAnalyticsController.show,
+  projectAnalyticsController.show,
 );
 
 export default routes;

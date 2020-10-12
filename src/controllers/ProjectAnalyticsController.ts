@@ -4,12 +4,12 @@ import { badImplementation } from '@hapi/boom';
 import {
   getRepositoryOpenedIssuesStats,
   getRepositoryByFullName,
-} from '../services/GithubService';
+} from '../services/MetricsService';
 import StatisticsRepository from '../repositories/StatisticsRepository';
 
 const statisticsRepository = new StatisticsRepository();
 
-class GitHubProjectAnalyticsController {
+class ProjectAnalyticsController {
   async show(request: Request, response: Response): Promise<Response> {
     const { user, repository } = request.params;
     const { id, session } = request.user;
@@ -31,4 +31,4 @@ class GitHubProjectAnalyticsController {
   }
 }
 
-export default GitHubProjectAnalyticsController;
+export default ProjectAnalyticsController;

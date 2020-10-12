@@ -134,14 +134,17 @@ export const getRepositoryOpenedIssuesStats = async (
 
   const openedIssuesCount = openedIssuesDaysCount.length;
 
-  const average =
+  const average = Math.round(
     openedIssuesDaysCount.reduce((sum, days) => sum + days, 0) /
-    openedIssuesCount;
+      openedIssuesCount,
+  );
 
-  const deviation = Math.sqrt(
-    openedIssuesDaysCount
-      .map(days => (days - average) ** 2)
-      .reduce((sum, days) => sum + days, 0) / openedIssuesCount,
+  const deviation = Math.round(
+    Math.sqrt(
+      openedIssuesDaysCount
+        .map(days => (days - average) ** 2)
+        .reduce((sum, days) => sum + days, 0) / openedIssuesCount,
+    ),
   );
 
   return responseRepositoryOpenedStats(
