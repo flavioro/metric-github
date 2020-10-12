@@ -1,4 +1,4 @@
-interface Auth {
+interface Authenticate {
   secret: string;
   expirationTime: string;
 }
@@ -6,4 +6,4 @@ interface Auth {
 export default {
   secret: process.env.JWT_SECRET,
   expirationTime: process.env.JWT_EXPIRATION_TIME,
-} as Auth;
+} as Authenticate;

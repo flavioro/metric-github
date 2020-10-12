@@ -46,7 +46,7 @@ describe('GitHubProjectsController', () => {
     apiMock.onGet('/search/repositories').reply(200, { items: repositories });
 
     const response = await request(app)
-      .get('/v1/repositories/react')
+      .get('/v1.0/repositories/react')
       .set('Authorization', authorization)
       .send();
 
@@ -61,7 +61,7 @@ describe('GitHubProjectsController', () => {
     apiMock.onGet('/search/repositories').reply(400);
 
     const response = await request(app)
-      .get('/v1/repositories/react')
+      .get('/v1.0/repositories/react')
       .set('Authorization', authorization)
       .send();
 

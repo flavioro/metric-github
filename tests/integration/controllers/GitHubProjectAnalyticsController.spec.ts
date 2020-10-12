@@ -69,7 +69,7 @@ describe('GitHubProjectAnalyticsController', () => {
       .reply(200, repository);
 
     const response = await request(app)
-      .get(`/v1/analytics/${repository.full_name}`)
+      .get(`/v1.0/metrics/${repository.full_name}`)
       .set('Authorization', authorization)
       .send();
 
@@ -126,7 +126,7 @@ describe('GitHubProjectAnalyticsController', () => {
       .reply(200, repository);
 
     const response = await request(app)
-      .get(`/v1/analytics/${repository.full_name}`)
+      .get(`/v1.0/metrics/${repository.full_name}`)
       .set('Authorization', authorization)
       .send();
 
@@ -199,7 +199,7 @@ describe('GitHubProjectAnalyticsController', () => {
       .reply(200, repository);
 
     const response = await request(app)
-      .get(`/v1/analytics/${repository.full_name}`)
+      .get(`/v1.0/metrics/${repository.full_name}`)
       .set('Authorization', authorization)
       .send();
 
@@ -248,7 +248,7 @@ describe('GitHubProjectAnalyticsController', () => {
       .reply(200, repository);
 
     const response = await request(app)
-      .get(`/v1/analytics/${repository.full_name}`)
+      .get(`/v1.0/metrics/${repository.full_name}`)
       .set('Authorization', authorization)
       .send();
 

@@ -190,7 +190,7 @@ describe('GitHubProjectsAnalyticsChartsController', () => {
 
     const response = await request(app)
       .get(
-        `/v1/analytics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
+        `/v1.0/metrics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
       )
       .set('Authorization', authorization)
       .send();
@@ -312,7 +312,7 @@ describe('GitHubProjectsAnalyticsChartsController', () => {
 
     const response = await request(app)
       .get(
-        `/v1/analytics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
+        `/v1.0/metrics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
       )
       .set('Authorization', authorization)
       .send();
@@ -444,7 +444,7 @@ describe('GitHubProjectsAnalyticsChartsController', () => {
 
     const response = await request(app)
       .get(
-        `/v1/analytics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
+        `/v1.0/metrics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
       )
       .set('Authorization', authorization)
       .send();
@@ -545,7 +545,7 @@ describe('GitHubProjectsAnalyticsChartsController', () => {
 
     const response = await request(app)
       .get(
-        `/v1/analytics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
+        `/v1.0/metrics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
       )
       .set('Authorization', authorization)
       .send();
@@ -596,7 +596,7 @@ describe('GitHubProjectsAnalyticsChartsController', () => {
 
     const response = await request(app)
       .get(
-        `/v1/analytics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
+        `/v1.0/metrics/chart?repositories[0]=${repo1.full_name}&repositories[1]=${repo2.full_name}`,
       )
       .set('Authorization', authorization)
       .send();

@@ -21,7 +21,7 @@ describe('Session controller', () => {
     const { email, password } = await factory.attrs('User');
     const user = await usersRepository.create(email, password);
     const response = await request(app)
-      .post('/v1/sessions')
+      .post('/v1.0/sessions')
       .send({ email, password });
 
     expect(response.body).toMatchObject({
@@ -33,7 +33,7 @@ describe('Session controller', () => {
   it('should not be able to login with user that not exists', async () => {
     const { email, password } = await factory.attrs('User');
     const response = await request(app)
-      .post('/v1/sessions')
+      .post('/v1.0/sessions')
       .expect(404)
       .send({ email, password });
 
@@ -51,7 +51,7 @@ describe('Session controller', () => {
     await usersRepository.create(email, password);
 
     const response = await request(app)
-      .post('/v1/sessions')
+      .post('/v1.0/sessions')
       .expect(400)
       .send({ email, password: wrong_password });
 

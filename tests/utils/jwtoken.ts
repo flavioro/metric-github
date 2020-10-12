@@ -1,9 +1,9 @@
 import jwt from 'jsonwebtoken';
 
-import auth from '../../src/config/auth';
+import authenticate from '../../src/config/authenticate';
 
 export default (id: string): string => {
-  return jwt.sign({ id }, auth.secret, {
-    expiresIn: auth.expirationTime,
+  return jwt.sign({ id }, authenticate.secret, {
+    expiresIn: authenticate.expirationTime,
   });
 };

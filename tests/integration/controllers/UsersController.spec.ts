@@ -17,7 +17,7 @@ describe('User controller', () => {
   it('should be able to store a new user', async () => {
     const { email, password } = await factory.attrs('User');
     const response = await request(app)
-      .post('/v1/users')
+      .post('/v1.0/users')
       .expect(204)
       .send({ email, password });
 
@@ -27,7 +27,7 @@ describe('User controller', () => {
   it('should not be able to store a new user with a duplicated email', async () => {
     const [{ email }, { password }] = await factory.createMany('User', 2);
     const response = await request(app)
-      .post('/v1/users')
+      .post('/v1.0/users')
       .expect(400)
       .send({ email, password });
 

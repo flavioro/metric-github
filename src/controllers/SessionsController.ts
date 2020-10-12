@@ -3,7 +3,7 @@ import { v4 } from 'uuid';
 import { Request, Response } from 'express';
 
 import { login } from '../services/UserService';
-import auth from '../config/auth';
+import authenticate from '../config/authenticate';
 
 class SessionsController {
   async store(request: Request, response: Response): Promise<void> {
@@ -13,8 +13,8 @@ class SessionsController {
 
     response.json({
       user: { _id },
-      token: jwt.sign({ id: _id, session: v4() }, auth.secret, {
-        expiresIn: auth.expirationTime,
+      token: jwt.sign({ id: _id, session: v4() }, authenticate.secret, {
+        expiresIn: authenticate.expirationTime,
       }),
     });
   }

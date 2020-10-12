@@ -6,7 +6,7 @@ import { isBoom, notFound } from '@hapi/boom';
 import helmet from 'helmet';
 import cors from 'cors';
 
-import './database/mongodb';
+import './database/dbmongo';
 import routes from './routes';
 
 const app = express();
@@ -15,10 +15,10 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-app.use('/v1/', routes);
+app.use('/v1.0/', routes);
 
 app.get('/*', () => {
-  throw notFound('Resource not found');
+  throw notFound('Route not found');
 });
 
 app.use(errors());
