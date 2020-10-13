@@ -8,7 +8,7 @@ import app from '../../../src/app';
 import factory from '../../utils/factory';
 import User from '../../../src/models/User';
 import token from '../../utils/jwtoken';
-import { http } from '../../../src/services/MetricsService';
+import accessApiGithub from '../../../src/config/AccessApiGithub';
 import Repository from '../../../src/models/Repository';
 
 interface Repository {
@@ -34,7 +34,7 @@ interface Issue {
 }
 
 describe('ProjectAnalyticsController', () => {
-  const apiMock = new MockAdapter(http);
+  const apiMock = new MockAdapter(accessApiGithub);
 
   let user_id: string;
   beforeEach(async () => {

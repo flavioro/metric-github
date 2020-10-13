@@ -23,24 +23,13 @@ interface RepoIssueRequest {
     url: string;
   };
 }
-
-// export const http = axios.create({
-//   baseURL: 'https://api.github.com',
-//   headers: {
-//     Accept: 'application/vnd.github.v3+json',
-//   },
-// });
-
 export const http = axios.create({
   baseURL: 'https://api.github.com',
   headers: {
     Accept: 'application/vnd.github.v3+json',
-    Authorization: process.env.TOKEN_GITHUB,
+    Authorization: process.env.GITHUB_TOKEN,
   },
 });
-
-// Alter defaults after instance has been created
-// axiosInstance.defaults.headers.common['Authorization'] = process.env.TOKEN_GITHUB;
 
 const defaultGetIssuesParams = {
   direction: 'asc',

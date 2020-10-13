@@ -6,7 +6,7 @@ import app from '../../../src/app';
 import factory from '../../utils/factory';
 import User from '../../../src/models/User';
 import token from '../../utils/jwtoken';
-import { http } from '../../../src/services/MetricsService';
+import accessApiGithub from '../../../src/config/AccessApiGithub';
 
 interface GithubRepository {
   id: number;
@@ -20,7 +20,7 @@ interface User {
 }
 
 describe('ProjectsController', () => {
-  const apiMock = new MockAdapter(http);
+  const apiMock = new MockAdapter(accessApiGithub);
 
   let user_id: string;
   beforeEach(async () => {
