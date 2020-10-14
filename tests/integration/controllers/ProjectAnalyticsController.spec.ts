@@ -73,21 +73,25 @@ describe('ProjectAnalyticsController', () => {
       .set('Authorization', authorization)
       .send();
 
-    const average =
+    const average = Math.round(
       issues.reduce((prev, { created_at }) => {
         return differenceInDays(new Date(), new Date(created_at)) + prev;
-      }, 0) / issues.length;
+      }, 0) / issues.length,
+    );
 
-    const deviation = Math.sqrt(
-      issues
-        .map(({ created_at }) => {
-          return (
-            (differenceInDays(new Date(), new Date(created_at)) - average) ** 2
-          );
-        })
-        .reduce((sum, days) => {
-          return days + sum;
-        }, 0) / issues.length,
+    const deviation = Math.round(
+      Math.sqrt(
+        issues
+          .map(({ created_at }) => {
+            return (
+              (differenceInDays(new Date(), new Date(created_at)) - average) **
+              2
+            );
+          })
+          .reduce((sum, days) => {
+            return days + sum;
+          }, 0) / issues.length,
+      ),
     );
 
     expect(response.body).toStrictEqual({
@@ -130,21 +134,25 @@ describe('ProjectAnalyticsController', () => {
       .set('Authorization', authorization)
       .send();
 
-    const average =
+    const average = Math.round(
       issues.reduce((prev, { created_at }) => {
         return differenceInDays(new Date(), new Date(created_at)) + prev;
-      }, 0) / issues.length;
+      }, 0) / issues.length,
+    );
 
-    const deviation = Math.sqrt(
-      issues
-        .map(({ created_at }) => {
-          return (
-            (differenceInDays(new Date(), new Date(created_at)) - average) ** 2
-          );
-        })
-        .reduce((sum, days) => {
-          return days + sum;
-        }, 0) / issues.length,
+    const deviation = Math.round(
+      Math.sqrt(
+        issues
+          .map(({ created_at }) => {
+            return (
+              (differenceInDays(new Date(), new Date(created_at)) - average) **
+              2
+            );
+          })
+          .reduce((sum, days) => {
+            return days + sum;
+          }, 0) / issues.length,
+      ),
     );
 
     expect(response.body).toStrictEqual({
@@ -203,30 +211,34 @@ describe('ProjectAnalyticsController', () => {
       .set('Authorization', authorization)
       .send();
 
-    const average =
+    const average = Math.round(
       issues.reduce((prev, { created_at, pull_request }) => {
         if (!pull_request) {
           return differenceInDays(new Date(), new Date(created_at)) + prev;
         }
         return prev;
       }, 0) /
-      (issuesCount - 2);
-
-    const deviation = Math.sqrt(
-      issues
-        .map(({ created_at, pull_request }) => {
-          if (!pull_request) {
-            return (
-              (differenceInDays(new Date(), new Date(created_at)) - average) **
-              2
-            );
-          }
-          return 0;
-        })
-        .reduce((sum, days) => {
-          return days + sum;
-        }, 0) /
         (issuesCount - 2),
+    );
+
+    const deviation = Math.round(
+      Math.sqrt(
+        issues
+          .map(({ created_at, pull_request }) => {
+            if (!pull_request) {
+              return (
+                (differenceInDays(new Date(), new Date(created_at)) -
+                  average) **
+                2
+              );
+            }
+            return 0;
+          })
+          .reduce((sum, days) => {
+            return days + sum;
+          }, 0) /
+          (issuesCount - 2),
+      ),
     );
 
     expect(response.body).toStrictEqual({
