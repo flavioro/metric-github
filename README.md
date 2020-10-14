@@ -7,17 +7,14 @@
 [![coverage](https://img.shields.io/codecov/c/gh/flavioro/metrics-github?logo=codecov&style=flat-square)](https://codecov.io/gh/flavioro/metrics-github)
 [![MIT License](https://img.shields.io/badge/license-MIT-green?style=flat-square)](https://github.com/flavioro/metrics-github/blob/master/LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)<br>
-[![Run in Insomnia}](https://insomnia.rest/images/run.svg)](https://insomnia.rest/run/?label=metrics-github&uri=https://github.com/flavioro/metrics-github/blob/master/Insomnia_2020-10-13-Flavio.json)
 
 ## 🏷️ ABOUT
-
 
 NodeJs - Backend - MetricsGitHub will collect metrics from GitHub projects and make them available in a consolidated dashboard. End users can query by Project name (like “React”) then they will see a #issues, average, and standard deviation time. App MetricsGitHub use JWT authentication.
 
 Allow users to search by project name and check issues status like opened issues, average days opened and deviation. The app use JWT to logins, validation, also a simple versioning was made.
 
 ## Table of Contents
-
 
 - [Requirements](#Requirements)
 - [Installing](#installing)
@@ -34,15 +31,14 @@ Allow users to search by project name and check issues status like opened issues
 # Requirements:
 
 - 🚀 Technologies used <br/>
-[VS Code - Visual Studio Code] (https://code.visualstudio.com/download)<br/>
-[npm] (https://www.npmjs.com/get-npm)<br/>
-[Node.js 10+] (https://nodejs.org/en/download/)<br/>
-[MongoDB] (https://docs.mongodb.com/manual/administration/install-community/)<br/>
-[Optional Docker] (https://docs.docker.com/get-docker/) - Docker is a tool designed to make it easier to create, deploy, and run applications by using containers, I use and recommend.<br/>
-[GitHub] (https://git-scm.com/downloads)<br/>
+  [VS Code - Visual Studio Code] (https://code.visualstudio.com/download)<br/>
+  [npm] (https://www.npmjs.com/get-npm)<br/>
+  [Node.js 10+] (https://nodejs.org/en/download/)<br/>
+  [MongoDB] (https://docs.mongodb.com/manual/administration/install-community/)<br/>
+  [Optional Docker] (https://docs.docker.com/get-docker/) - Docker is a tool designed to make it easier to create, deploy, and run applications by using containers, I use and recommend.<br/>
+  [GitHub] (https://git-scm.com/downloads)<br/>
 
 # Installing
-
 
 Getting a Git Repository [Link](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository) - example.
 
@@ -55,23 +51,21 @@ $ npm install
 ## Configuring
 
 - 🌐 Environment variables
-env file. It's actually a simple configuration text file that is used to define some variables you want to pass into your application's environment. Rename file `.env.example` to `.env`
-.env(https://github.com/motdotla/dotenv)
+  env file. It's actually a simple configuration text file that is used to define some variables you want to pass into your application's environment. Rename file `.env.example` to `.env`
+  .env(https://github.com/motdotla/dotenv)
 
-| key                 | description                                                                                                                                                                           | default      |
-| ------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------ |
-| APP_PORT            | Port number where the app will run.                                                                                                                                                   | `3333`       |
-| GITHUB_TOKEN            | A personal token for GitHub access, it **is necessary** [Create Token GitHub](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token)                                                                                                                                                  | `token-created`       |
-| GITHUB_API            | API to GitHub access                                                                                                                                                    | `https://api.github.com`       |
-| JWT_SECRET          | A alphanumeric random string. Used to create signed tokens.                                                                                                                           | -            |
-| JWT_EXPIRATION_TIME | How long time will be the token valid. See [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#usage) repo for more information.                                                | `7d`         |
-| MONGO_DB            | Database name.                                                                                                                                                                        | `metricsGithub` |
-| MONGO_HOST          | MongoDB host. For Windows users using Docker Toolbox maybe be necessary in your `.env` file set the host to `192.168.99.100` (docker machine IP) instead of localhost or `localhost`. | `localhost`  |
-| MONGO_PORT          | MongoDB standard port.                                                                                                                                                                         | `27017`       |
-
+| key                 | description                                                                                                                                                                                     | default                  |
+| ------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------ |
+| APP_PORT            | Port number where the app will run.                                                                                                                                                             | `3333`                   |
+| GITHUB_TOKEN        | A personal token for GitHub access, it **is necessary** [Create Token GitHub](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) | `token-created`          |
+| GITHUB_API          | API to GitHub access                                                                                                                                                                            | `https://api.github.com` |
+| JWT_SECRET          | A alphanumeric random string. Used to create signed tokens.                                                                                                                                     | -                        |
+| JWT_EXPIRATION_TIME | How long time will be the token valid. See [jsonwebtoken](https://github.com/auth0/node-jsonwebtoken#usage) repo for more information.                                                          | `7d`                     |
+| MONGO_DB            | Database name.                                                                                                                                                                                  | `metricsGithub`          |
+| MONGO_HOST          | MongoDB host. For Windows users using Docker Toolbox maybe be necessary in your `.env` file set the host to `192.168.99.100` (docker machine IP) instead of localhost or `localhost`.           | `localhost`              |
+| MONGO_PORT          | MongoDB standard port.                                                                                                                                                                          | `27017`                  |
 
 To create a personal access token in GitHub [link](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) is required to use the app metrics-github.
-
 
 ### Database
 
@@ -79,10 +73,10 @@ To create a personal access token in GitHub [link](https://docs.github.com/en/fr
 The motivation of the MongoDB language is to implement a data store that provides high performance, high availability, and automatic scaling. MongoDB is extremely simple to install and implement. MongoDB uses JSON or BSON documents to store data.
 
 Or use docker to mongoDB
+
 ```
 $ docker run --name metrics-github-mongo -d -p 27017:27017 mongo
 ```
-
 
 # Usage
 
@@ -94,12 +88,9 @@ npm run dev:server
 
 # Testing-Jest-Routes
 
-
 [Jest](https://jestjs.io/) is a delightful JavaScript Testing Framework with a focus on simplicity.
 
 It works with projects using: Babel, TypeScript, Node, React, Angular, Vue and more!
-
-
 
 ## Test Jest
 
@@ -132,8 +123,8 @@ Request body:
   "password": "123456"
 }
 ```
-![Create User Insomnia](./docs/create-user.JPG)
 
+![Create User Insomnia](./docs/create-user.JPG)
 
 - `POST /session`
 
@@ -145,11 +136,16 @@ Request body:
   "password": "123456"
 }
 ```
+
 ![Create Token User Insomnia](docs/create-token-user.JPG)
 
 ### Example Repository GitHub
 
+**Request**
+
 - `GET /repositories/javascript-brazil`
+
+**Response**
 
 ```json
 [
@@ -174,9 +170,14 @@ Request body:
     "full_name": "Aldrie/BrazilMocker"
   },
 ```
+
 ![](docs/find-repositories.JPG)
 
+**Request**
+
 - `GET /metrics/rocketseat/gatsby-themes`
+
+**Response**
 
 ```json
 {
@@ -186,8 +187,8 @@ Request body:
   "deviation": 69
 }
 ```
-![](docs/metrics-repository.JPG)
 
+![](docs/metrics-repository.JPG)
 
 # Future improvements
 
@@ -202,6 +203,5 @@ Request body:
   - Racking by Forks;
   - Racking by Watching;
   - Racking by Contributors;
-
 
 Developed by Flavio Rodrigues 🌝
