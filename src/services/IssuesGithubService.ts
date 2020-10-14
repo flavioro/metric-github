@@ -3,12 +3,23 @@ import { AxiosResponse } from 'axios';
 
 import AccessApiGithub from '../config/AccessApiGithub';
 import {
-  responseRepositoryOpenedStats,
-  responseRepositoryIssuesStats,
-  RepoIssuesChartStats,
-  RepoOpenedIssuesStats,
-  RepoIssuesChartStatsRequest,
-} from '../parses/github';
+  IGitIssuesChartStats,
+  IGitOpenedIssuesStats,
+  IGitIssuesChartStatsRequest,
+  IDataset,
+} from '../dtos/IGitIssueDTO';
+
+const responseRepositoryOpenedStats = (
+  name: string,
+  open_issues_count: number,
+  average: number,
+  deviation: number,
+): IGitOpenedIssuesStats => ({
+  name,
+  open_issues: open_issues_count,
+  average,
+  deviation,
+});
 
 interface RepoIssueRequest {
   created_at: string;
@@ -17,6 +28,36 @@ interface RepoIssueRequest {
     url: string;
   };
 }
+
+const responseRepositoryIssuesStats = (
+  issuesByDate: IGitIssuesChartStatsRequest,
+): IGitIssuesChartStats => {
+  const datasets: IDataset[] = [];
+  const labels: string[] = [];
+
+  Object.keys(issuesByDate).forEach(repo => {
+    if (labels.length === 0) {
+      Object.keys(issuesByDate[repo].opened).forEach(date => labels.push(date));
+    }
+
+    datasets.push({
+      label: `${repo} - Opened Issues`,
+      data: Object.values(issuesByDate[repo].opened),
+      backgroundColor: 'transparent',
+    });
+
+    datasets.push({
+      label: `${repo} - Closed Issues`,
+      data: Object.values(issuesByDate[repo].closed),
+      backgroundColor: 'transparent',
+    });
+  });
+
+  return {
+    labels,
+    datasets,
+  };
+};
 
 const defaultGetIssuesParams = {
   direction: 'asc',
@@ -34,7 +75,7 @@ const getRepositoryIssuePagePromise = async (
 
 export const getRepositoryOpenedIssuesStats = async (
   fullName: string,
-): Promise<RepoOpenedIssuesStats> => {
+): Promise<IGitOpenedIssuesStats> => {
   const openedIssuesDaysCount: number[] = [];
   const defaultParams = {
     ...defaultGetIssuesParams,
@@ -112,7 +153,7 @@ export const getRepositoryOpenedIssuesStats = async (
 
 export const getRepositoryIssuesStats = async (
   repositories: string[],
-): Promise<RepoIssuesChartStats> => {
+): Promise<IGitIssuesChartStats> => {
   const lookForIssuesSince = subMonths(Date.now(), 3);
 
   const defaultParams = {
@@ -127,7 +168,7 @@ export const getRepositoryIssuesStats = async (
     response: AxiosResponse<RepoIssueRequest[]>;
   }>[] = [];
 
-  const issuesByDate: RepoIssuesChartStatsRequest = {};
+  const issuesByDate: IGitIssuesChartStatsRequest = {};
   repositories.forEach(fullName => {
     issuesByDate[fullName] = { opened: {}, closed: {} };
 

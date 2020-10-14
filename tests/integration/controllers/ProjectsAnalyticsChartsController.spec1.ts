@@ -33,7 +33,7 @@ interface Issue {
     | null;
 }
 
-interface Dataset {
+interface IDataset {
   label: string;
   borderColor: string;
   data: number[];
@@ -210,7 +210,7 @@ describe('ProjectsAnalyticsChartsController', () => {
       }
     });
 
-    const datasets: Dataset[] = [];
+    const datasets: IDataset[] = [];
     [repo1, repo2].forEach(repo => {
       datasets.push({
         label: `${repo.full_name} - Opened Issues`,
@@ -337,7 +337,7 @@ describe('ProjectsAnalyticsChartsController', () => {
       }
     });
 
-    const datasets: Dataset[] = [];
+    const datasets: IDataset[] = [];
     [repo1, repo2].forEach(repo => {
       datasets.push({
         label: `${repo.full_name} - Opened Issues`,
@@ -470,7 +470,7 @@ describe('ProjectsAnalyticsChartsController', () => {
       }
     });
 
-    const datasets: Dataset[] = [];
+    const datasets: IDataset[] = [];
     [repo1, repo2].forEach(repo => {
       datasets.push({
         label: `${repo.full_name} - Opened Issues`,
@@ -565,7 +565,7 @@ describe('ProjectsAnalyticsChartsController', () => {
       }
     });
 
-    const datasets: Dataset[] = [];
+    const datasets: IDataset[] = [];
     [repo1, repo2].forEach(repo => {
       datasets.push({
         label: `${repo.full_name} - Opened Issues`,
