@@ -35,12 +35,12 @@ Allow users to search by project name and check issues status like opened issues
 # Requirements: - 🚀 Technologies used
 
 
-VS Code - Visual Studio Code [Link](https://code.visualstudio.com/download)
-npm - [Link](https://www.npmjs.com/get-npm)
-Node.js 10+ [Link](https://nodejs.org/en/download/)
-MongoDB [Link](https://docs.mongodb.com/manual/administration/install-community/)
-Optional - Docker [Link](https://docs.docker.com/get-docker/) - Docker is a tool designed to make it easier to create, deploy, and run applications by using containers, I use and recommend.
-GitHub - [Link](https://git-scm.com/downloads)
+VS Code - Visual Studio Code [Link](https://code.visualstudio.com/download)<br/>
+npm - [Link](https://www.npmjs.com/get-npm)<br/>
+Node.js 10+ [Link](https://nodejs.org/en/download/)<br/>
+MongoDB [Link](https://docs.mongodb.com/manual/administration/install-community/)<br/>
+Optional - Docker [Link](https://docs.docker.com/get-docker/) - Docker is a tool designed to make it easier to create, deploy, and run applications by using containers, I use and recommend.<br/>
+GitHub - [Link](https://git-scm.com/downloads)<br/>
 
 # Installing
 
@@ -115,10 +115,10 @@ To test the routes, you can use the [Insomnia](https://insomnia.rest/). The whol
 
 If desired, use another way to perform as requests, as available routes are:
 
-**`POST http://localhost:3333/v1.0/users`** - Created user.
-**`POST http://localhost:3333/v1.0/sessions`** - Generates user token.
-**`GET http://localhost:3333/v1.0/metrics/:user/:repository`** - Average Statistics Libs Issues.
-**`GET http://localhost:3333/v1.0/repositories/:name_search`** - Collect Data From GitHub.
+**`POST http://localhost:3333/v1.0/users`** - Created user.<br/>
+**`POST http://localhost:3333/v1.0/sessions`** - Generates user token.<br/>
+**`GET http://localhost:3333/v1.0/metrics/:user/:repository`** - Average Statistics Libs Issues.<br/>
+**`GET http://localhost:3333/v1.0/repositories/:name_search`** - Collect Data From GitHub.<br/>
 
 ### Example User
 
