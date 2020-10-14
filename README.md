@@ -132,7 +132,7 @@ Request body:
   "password": "123456"
 }
 ```
-![Create User Insomnia](./doc/create-user.jpg)
+![Create User Insomnia](./docs/create-user.jpg)
 
 
 - `POST /session`
