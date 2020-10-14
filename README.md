@@ -27,7 +27,10 @@ Allow users to search by project name and check issues status like opened issues
 - [Testing-Jest-Routes ](#Testing-Jest-Routes)
   - [Test Jest](#Test-Jest)
   - [Test Routes](#Test-Routes)
-
+    - [Example - User](Example-User)
+    - [Example - Repository GitHub](Example-Repository-GitHub)
+- [Future improvements](Future-improvements)
+ - Refactoring, complete all tests, test unit, test integration and test end to end
 
 # Requirements: - 🚀 Technologies used
 
@@ -50,9 +53,9 @@ $ npm install
 
 > Testing your application is part of the development. [`eslint`](https://eslint.org/) and [`prettier`](https://prettier.io/) I use it as a pre-test and also typescript to keep the code clean and patterned.
 
-## Configuring - 🌐 Environment variables
+## Configuring
 
-
+- 🌐 Environment variables
 env file. It's actually a simple configuration text file that is used to define some variables you want to pass into your application's environment. Rename file `.env.example` to `.env`
 .env(https://github.com/motdotla/dotenv)
 
@@ -112,12 +115,25 @@ To test the routes, you can use the [Insomnia](https://insomnia.rest/). The whol
 
 If desired, use another way to perform as requests, as available routes are:
 
-POST http://localhost:3333/v1.0/users - Created user.
-POST http://localhost:3333/v1.0/sessions - Generates user token.
-GET http://localhost:3333/v1.0/metrics/:user/:repository - Average Statistics Libs Issues.
-GET http://localhost:3333/v1.0/repositories/:name_search - Collect Data From GitHub.
+**`POST http://localhost:3333/v1.0/users`** - Created user.
+**`POST http://localhost:3333/v1.0/sessions`** - Generates user token.
+**`GET http://localhost:3333/v1.0/metrics/:user/:repository`** - Average Statistics Libs Issues.
+**`GET http://localhost:3333/v1.0/repositories/:name_search`** - Collect Data From GitHub.
 
-### Requests
+### Example User
+
+- `POST /users`
+
+Request body:
+
+```json
+{
+  "email": "flavioro@gmail.com",
+  "password": "123456"
+}
+```
+![Create User Insomnia](./doc/create-user.jpg)
+
 
 - `POST /session`
 
@@ -130,15 +146,8 @@ Request body:
 }
 ```
 
-- `POST /users`
+### Example Repository GitHub
 
-Request body:
 
-```json
-{
-  "email": "flavioro@gmail.com",
-  "password": "123456"
-}
-```
 
 Developed by Flavio Rodrigues 🌝
