@@ -30,7 +30,6 @@ Allow users to search by project name and check issues status like opened issues
     - [Example_User](#Example-User)
     - [Example Repository GitHub](#Example-Repository-GitHub)
 - [Future improvements](#Future-improvements)
- - Refactoring, complete all tests, test unit, test integration and test end to end
 
 # Requirements: - 🚀 Technologies used
 
@@ -76,6 +75,7 @@ To create a personal access token in GitHub [link](https://docs.github.com/en/fr
 
 ### Database
 
+![](docs/api-db-git-frontend-changed.png)
 The motivation of the MongoDB language is to implement a data store that provides high performance, high availability, and automatic scaling. MongoDB is extremely simple to install and implement. MongoDB uses JSON or BSON documents to store data.
 
 Or use docker to mongoDB
