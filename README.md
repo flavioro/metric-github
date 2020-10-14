@@ -27,8 +27,8 @@ Allow users to search by project name and check issues status like opened issues
 - [Testing-Jest-Routes ](#Testing-Jest-Routes)
   - [Test Jest](#Test-Jest)
   - [Test Routes](#Test-Routes)
-    - [Example - User](Example-User)
-    - [Example - Repository GitHub](Example-Repository-GitHub)
+    - [Example User](Example-User)
+    - [Example Repository GitHub](Example-Repository-GitHub)
 - [Future improvements](Future-improvements)
  - Refactoring, complete all tests, test unit, test integration and test end to end
 
@@ -133,7 +133,6 @@ Request body:
 }
 ```
 ![Create User Insomnia](./docs/create-user.JPG)
-![Create User Insomnia](docs/create-user.JPG)
 
 
 - `POST /session`
@@ -146,9 +145,47 @@ Request body:
   "password": "123456"
 }
 ```
+![Create Token User Insomnia](docs/create-token-user.JPG)
 
 ### Example Repository GitHub
 
+- `GET /repositories/javascript-brazil`
 
+```json
+[
+  {
+    "id": 31271725,
+    "name": "cep-scraper",
+    "full_name": "codigourbano/cep-scraper"
+  },
+  {
+    "id": 47996256,
+    "name": "form-masks",
+    "full_name": "clarabatt/form-masks"
+  },
+  {
+    "id": 73652494,
+    "name": "SliB.js",
+    "full_name": "Silva97/SliB.js"
+  },
+  {
+    "id": 234383871,
+    "name": "BrazilMocker",
+    "full_name": "Aldrie/BrazilMocker"
+  },
+```
+![](docs/find-repositories.JPG)
+
+- `GET /metrics/rocketseat/gatsby-themes`
+
+```json
+{
+  "name": "Rocketseat/gatsby-themes",
+  "open_issues": 4,
+  "average": 93,
+  "deviation": 69
+}
+```
+![](docs/metrics-repository.JPG)
 
 Developed by Flavio Rodrigues 🌝
