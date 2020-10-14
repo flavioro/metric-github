@@ -19,28 +19,28 @@ Allow users to search by project name and check issues status like opened issues
 ## Table of Contents
 
 
-- [Requirements:](#Requirements:)
+- [Requirements](#Requirements)
 - [Installing](#installing)
   - [Configuring](#configuring)
-    - [MongoDB](#mongodb)
+    - [Database](#Database)
 - [Usage](#usage)
-- [Testing-Jest-Routes ](#Testing-Jest-Routes)
+- [Testing-Jest-Routes](#Testing-Jest-Routes)
   - [Test Jest](#Test-Jest)
   - [Test Routes](#Test-Routes)
-    - [Example User](Example-User)
-    - [Example Repository GitHub](Example-Repository-GitHub)
-- [Future improvements](Future-improvements)
+    - [Example_User](#Example-User)
+    - [Example Repository GitHub](#Example-Repository-GitHub)
+- [Future improvements](#Future-improvements)
  - Refactoring, complete all tests, test unit, test integration and test end to end
 
 # Requirements: - 🚀 Technologies used
 
 
-VS Code - Visual Studio Code [Link](https://code.visualstudio.com/download)<br/>
-npm - [Link](https://www.npmjs.com/get-npm)<br/>
-Node.js 10+ [Link](https://nodejs.org/en/download/)<br/>
-MongoDB [Link](https://docs.mongodb.com/manual/administration/install-community/)<br/>
-Optional - Docker [Link](https://docs.docker.com/get-docker/) - Docker is a tool designed to make it easier to create, deploy, and run applications by using containers, I use and recommend.<br/>
-GitHub - [Link](https://git-scm.com/downloads)<br/>
+[VS Code - Visual Studio Code] (https://code.visualstudio.com/download)<br/>
+[npm] (https://www.npmjs.com/get-npm)<br/>
+[Node.js 10+] (https://nodejs.org/en/download/)<br/>
+[MongoDB] (https://docs.mongodb.com/manual/administration/install-community/)<br/>
+[Optional Docker] (https://docs.docker.com/get-docker/) - Docker is a tool designed to make it easier to create, deploy, and run applications by using containers, I use and recommend.<br/>
+[GitHub] (https://git-scm.com/downloads)<br/>
 
 # Installing
 
@@ -74,7 +74,7 @@ env file. It's actually a simple configuration text file that is used to define 
 To create a personal access token in GitHub [link](https://docs.github.com/en/free-pro-team@latest/github/authenticating-to-github/creating-a-personal-access-token) is required to use the app metrics-github.
 
 
-### MongoDB
+### Database
 
 The motivation of the MongoDB language is to implement a data store that provides high performance, high availability, and automatic scaling. MongoDB is extremely simple to install and implement. MongoDB uses JSON or BSON documents to store data.
 
@@ -187,5 +187,21 @@ Request body:
 }
 ```
 ![](docs/metrics-repository.JPG)
+
+
+# Future improvements
+
+- Due to time, I was unable to complete all tests, unit tests, integration tests and end-to-end testing. <br/>
+
+- Refactoring: Improving the pattern of existing code, always with clean code, design patterns already used. <br/>
+
+- I liked to implement this API, I intend to add new search metrics soon, to know the most used ones:
+  - Racking by Programming languages;
+  - Racking by Libraries used in the projects, reading information from the package.json file;
+  - Racking by stars;
+  - Racking by Forks;
+  - Racking by Watching;
+  - Racking by Contributors;
+
 
 Developed by Flavio Rodrigues 🌝
