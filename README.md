@@ -31,9 +31,9 @@ Allow users to search by project name and check issues status like opened issues
     - [Example Repository GitHub](#Example-Repository-GitHub)
 - [Future improvements](#Future-improvements)
 
-# Requirements: - 🚀 Technologies used
+# Requirements:
 
-
+- 🚀 Technologies used <br/>
 [VS Code - Visual Studio Code] (https://code.visualstudio.com/download)<br/>
 [npm] (https://www.npmjs.com/get-npm)<br/>
 [Node.js 10+] (https://nodejs.org/en/download/)<br/>
