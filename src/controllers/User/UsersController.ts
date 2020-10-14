@@ -1,6 +1,6 @@
 import { Request, Response } from 'express';
 
-import { createUser } from '../services/UserService';
+import { createUser } from '../../services/UserService';
 
 class UsersController {
   async store(request: Request, response: Response): Promise<void> {

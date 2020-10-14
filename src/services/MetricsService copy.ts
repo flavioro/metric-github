@@ -1,7 +1,7 @@
-import { format, isAfter, differenceInDays, subMonths } from 'date-fns';
 import { AxiosResponse } from 'axios';
-
+import { format, isAfter, differenceInDays, subMonths } from 'date-fns';
 import AccessApiGithub from '../config/AccessApiGithub';
+
 import {
   responseRepositoryOpenedStats,
   responseRepositoryIssuesStats,

@@ -2,8 +2,8 @@ import jwt from 'jsonwebtoken';
 import { v4 } from 'uuid';
 import { Request, Response } from 'express';
 
-import { login } from '../services/UserService';
-import authenticate from '../config/authenticate';
+import { login } from '../../services/UserService';
+import authenticate from '../../config/authenticate';
 
 class SessionsController {
   async store(request: Request, response: Response): Promise<void> {

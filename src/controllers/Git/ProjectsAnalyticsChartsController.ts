@@ -1,10 +1,8 @@
 import { Request, Response } from 'express';
 import { badImplementation } from '@hapi/boom';
 
-import {
-  getRepositories,
-  getRepositoryIssuesStats,
-} from '../services/MetricsService';
+import { getRepositoryIssuesStats } from '../services/MetricsService';
+import { getRepositoriesGit } from '../services/RepositoriesGithubService';
 
 interface CustomRequest {
   query: {
@@ -20,7 +18,7 @@ class ProjectsAnalyticsChartsController {
     const { repositories } = request.query;
 
     try {
-      const repos = await getRepositories(repositories);
+      const repos = await getRepositoriesGit(repositories);
       const repositoryStats = await getRepositoryIssuesStats(
         repos.map(({ full_name }) => full_name),
       );

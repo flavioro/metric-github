@@ -1,14 +1,14 @@
 import { Router } from 'express';
 
-import ProjectsController from '../controllers/ProjectsController';
-import ProjectAnalyticsController from '../controllers/ProjectAnalyticsController';
-import UsersController from '../controllers/UsersController';
-import SessionsController from '../controllers/SessionsController';
+import UsersController from '../controllers/User/UsersController';
+import SessionsController from '../controllers/User/SessionsController';
+import ProjectsController from '../controllers/Git/ProjectsController';
+import ProjectAnalyticsController from '../controllers/Git/ProjectAnalyticsController';
 
-import projectNameValidator from '../validators/projectNameValidator';
-import githubRepositoryNameValidator from '../validators/githubRepositoryNameValidator';
 import userValidator from '../validators/userValidator';
 import Authenticate from '../middlewares/Authenticate';
+import gitNamesRepositoriesValidator from '../validators/gitNamesRepositoriesValidator';
+import githubRepositoryNameValidator from '../validators/githubRepositoryNameValidator';
 
 const routes = Router();
 
@@ -23,8 +23,8 @@ routes.post('/sessions', userValidator, sessionsController.store);
 routes.use(Authenticate);
 
 routes.get(
-  '/repositories/:projectName',
-  projectNameValidator,
+  '/repositories/:gitNamesRepositories',
+  gitNamesRepositoriesValidator,
   projectsController.show,
 );
 

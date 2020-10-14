@@ -1,11 +1,9 @@
 import { Request, Response } from 'express';
 import { badImplementation } from '@hapi/boom';
 
-import {
-  getRepositoryOpenedIssuesStats,
-  getRepositoryByFullName,
-} from '../services/MetricsService';
-import StatisticsRepository from '../repositories/StatisticsRepository';
+import { getRepositoryOpenedIssuesStats } from '../../services/MetricsService';
+import { getRepositoryGitFullName } from '../../services/RepositoriesGithubService';
+import StatisticsRepository from '../../repositories/StatisticsRepository';
 
 const statisticsRepository = new StatisticsRepository();
 
@@ -15,7 +13,7 @@ class ProjectAnalyticsController {
     const { id, session } = request.user;
 
     try {
-      const repo = await getRepositoryByFullName(`${user}/${repository}`);
+      const repo = await getRepositoryGitFullName(`${user}/${repository}`);
       const repositoryStats = await getRepositoryOpenedIssuesStats(
         repo.full_name,
       );
