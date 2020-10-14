@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 import { badImplementation } from '@hapi/boom';
 
-import { getRepositoryIssuesStats } from '../services/MetricsService';
-import { getRepositoriesGit } from '../services/RepositoriesGithubService';
+import { getRepositoryIssuesStats } from '../../services/IssuesGithubService';
+import { getRepositoriesGit } from '../../services/RepositoriesGithubService';
 
 interface CustomRequest {
   query: {

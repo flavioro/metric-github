@@ -8,7 +8,7 @@ import ProjectAnalyticsController from '../controllers/Git/ProjectAnalyticsContr
 import userValidator from '../validators/userValidator';
 import Authenticate from '../middlewares/Authenticate';
 import gitNamesRepositoriesValidator from '../validators/gitNamesRepositoriesValidator';
-import githubRepositoryNameValidator from '../validators/githubRepositoryNameValidator';
+import gitRepositoryNameAndUserValidator from '../validators/gitRepositoryNameAndUserValidator';
 
 const routes = Router();
 
@@ -30,7 +30,7 @@ routes.get(
 
 routes.get(
   '/metrics/:user/:repository',
-  githubRepositoryNameValidator,
+  gitRepositoryNameAndUserValidator,
   projectAnalyticsController.show,
 );
 

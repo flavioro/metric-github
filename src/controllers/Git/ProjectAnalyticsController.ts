@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 import { badImplementation } from '@hapi/boom';
 
-import { getRepositoryOpenedIssuesStats } from '../../services/MetricsService';
+import { getRepositoryOpenedIssuesStats } from '../../services/IssuesGithubService';
 import { getRepositoryGitFullName } from '../../services/RepositoriesGithubService';
 import StatisticsRepository from '../../repositories/StatisticsRepository';
 
