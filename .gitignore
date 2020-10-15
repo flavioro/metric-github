@@ -34,7 +34,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
- .env
+.env
 
 # Nuxt.js build / generate output
 .nuxt
